@@ -1,0 +1,24 @@
+get time input 
+
+keep track of the time and change color when time is up 
+
+gray == past 
+red == present 
+green == future 
+
+if (time < now ){
+    past = gray
+}else if (time == now ){
+    present == red ;
+
+}else {
+    future == green 
+}
+
+
+// event listeners 
+
+inputs => forms 
+save and display
+
+
