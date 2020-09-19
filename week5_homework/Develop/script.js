@@ -78,7 +78,7 @@ console.log(nowDate);
 })();
 
 // make html hours equal to moment hours
-var hourNow = moment().format("hh");
+var hourNow = moment().format("H");
 console.log(hourNow);
 
 
@@ -109,6 +109,118 @@ else if (hourNow == nineAm){
 }else{
 
 }
+
+var tenAm = document.getElementById('ten').value
+
+if (hourNow < tenAm){
+    console.log("it's before 10")
+}
+else if (hourNow == tenAm){
+    console.log("now it should be green")
+}else if (hourNow > tenAm){
+    console.log("now its passed 10")
+
+}else{
+
+}
+var elevenAm = document.getElementById('eleven').value
+
+if (hourNow < elevenAm){
+    console.log("it's before eleven")
+}
+else if (hourNow == elevenAm){
+    console.log("now it should be green")
+}else if (hourNow > elevenAm){
+    console.log("now its passed eleven")
+
+}else{
+
+}
+var twelvepm = document.getElementById('twelve').value
+
+if (hourNow < twelvepm){
+    console.log("it's before twelve")
+}
+else if (hourNow == twelvepm){
+    console.log("now it should be green")
+}else if (hourNow > twelvepm){
+    console.log("now its passed twelve")
+
+}else{
+
+}
+
+var onepm = document.getElementById('one').value
+
+if (hourNow < onepm){
+    console.log("it's before onepm")
+}
+else if (hourNow == onepm){
+    console.log("now it should be green")
+}else if (hourNow > onepm){
+    console.log("now its passed onepm")
+
+}else{
+
+}
+console.log(hourNow);
+
+var twopm = document.getElementById('two').value
+
+if (hourNow < twopm ){
+    console.log("it's before twopm ")
+}
+else if (hourNow == twopm ){
+    console.log("now it should be green")
+}else if (hourNow > twopm ){
+    console.log("now its passed twopm ")
+
+}else{
+
+}
+
+var threepm = document.getElementById('three').value
+
+if (hourNow < threepm){
+    console.log("it's before threepm")
+}
+else if (hourNow == threepm){
+    console.log("now it should be green")
+}else if (hourNow > threepm){
+    console.log("now its passed threepm")
+
+}else{
+
+}
+
+var fourpm = document.getElementById('four').value
+
+if (hourNow < fourpm){
+    console.log("it's before fourpm")
+}
+else if (hourNow == threepm){
+    console.log("now it should be green")
+}else if (hourNow > fourpm){
+    console.log("now its passed fourpm")
+
+}else{
+
+}
+
+var fivepm = document.getElementById('five').value
+
+if (hourNow < fivepm ){
+    console.log("it's before fivepm ")
+}
+else if (hourNow == fivepm ){
+    console.log("now it should be green")
+}else if (hourNow > fivepm ){
+    console.log("now its passed fivepm ")
+
+}else{
+
+}
+
 
 
 /*
