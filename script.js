@@ -1,67 +1,18 @@
-//const calendar = document.querySelector('#app-calendar');
-//console.log(calendar);
-let startHour = 1;
-let MidDay = 24;
-let hoursDay = Array(MidDay - startHour+1)
-.fill()
-.map(()=>startHour++);
-console.log(hoursDay);
-/*
-for (var i = 0; i < hoursDay.length; i++){
-    let hoursDay1 = [];
-    hoursDay1 = hoursDay(i) + "am";
-}
-console.log(hoursDay1);
-*/
-/*
-for (var i = 0; i < hoursDay.length; i++){
-    document.createElement("button");
-   // document.createAttribute("button",hoursDay[i]);
-    button.innerHTML = hoursDay[i];
-}
-*/
-
-/*
-for (var i = 0 ; i<hoursDay; i++){
-    var btn = document.createElement("button");
-    btn.innerHTML = hoursDay[i];
-    document.body.appendChild(btn[i]);
-}
-*/
-/*
-var btn = document.createElement("button");
-btn.innerHTML = hoursDay[0];
-btn.innerHTML = hoursDay[1];
-
-document.body.appendChild(btn);
-*/
-/*
-var btn = document.createElement("button");
-btn.innerHTML = hoursDay[0];
-document.body.appendChild(btn);
-
-var btn = document.getElementById("two");
-btn.innerHTML = hoursDay[1];
-document.body.appendChild(btn);
-
-var dt = new Date();
-var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
-document.write(time);
-console.log(time);
-
-*/
-/*
-var nowMoment = moment();
-console.log(nowMoment);
-
-var nowDate = new Date();
-console.log(nowDate);
-*/
+/* $(document).ready(function(){ */
+    $(".save").on('click',function (){
+      /*   console.log( $(".description").val()); */
+       console.log($(this).parent().prev().val())
+       console.log($(this).val())
+       //save id and message (id = time ) and inputtext == message to local 
+       // look into local storage method    
 
 
+    }) 
+    
 
-(function()
-{
+
+/* function() */
+/* { */
   // instantiate a moment object
   var NowMoment = moment().format("DD:MM:YYYY hh:mm a");
   
@@ -72,25 +23,27 @@ console.log(nowDate);
   var eDisplayMoment = document.getElementById('now');
   eDisplayMoment.innerHTML = NowMoment;
   
-  // display value of Date object in #displayJsDate div
-  //var eDisplayDate = document.getElementById('displayJsDate');
-  //eDisplayDate.innerHTML = NowDate;
-})();
 
 // make html hours equal to moment hours
-var hourNow = moment().format("hh");
+var hourNow = moment().format("HH");
 console.log(hourNow);
 
 
 var eightAm = document.getElementById('eight').value
 
 if (hourNow < eightAm){
-    console.log("it's before 8")
+    console.log("it's after 12")
+    $(".eightam").css("background-color","green");
+    //select class or id 
+    //then select css method
+    //set color to gray
 }
 else if (hourNow == eightAm){
     console.log("now it should be green")
+    $(".eightam").css("background-color","red");
 }else if (hourNow > eightAm){
-    console.log("now its passed 8")
+    console.log("now it's before 12")
+    $(".eightam").css("background-color","orange");
 
 }else{
 
@@ -99,49 +52,177 @@ else if (hourNow == eightAm){
 var nineAm = document.getElementById('nine').value
 
 if (hourNow < nineAm){
-    console.log("it's before 9")
+    console.log("it's after 12")
+    $(".nineam").css("background-color","green");
+
 }
 else if (hourNow == nineAm){
-    console.log("now it should be green")
+    console.log("now it should be red")
+    $(".nineam").css("background-color","red");
 }else if (hourNow > nineAm){
     console.log("now its passed nine")
+    $(".nineam").css("background-color","orange");
+
+}else{
+
+}
+
+var tenAm = document.getElementById('ten').value
+
+if (hourNow < tenAm){
+    console.log("it's BEFORE 12")
+    $(".tenam").css("background-color","green");
+
+}
+else if (hourNow == nineAm){
+    console.log("now it should be red")
+    $(".tenam").css("background-color","red");
+}else if (hourNow > tenAm){
+    console.log("now its passed nine")
+    $(".tenam").css("background-color","orange");
+
+}else{
+
+}
+var elevenAm = document.getElementById('eleven').value
+
+if (hourNow < elevenAm){
+    console.log("it's before eleven")
+    $(".elevenam").css("background-color","green");
+
+}
+else if (hourNow == elevenAm){
+    console.log("now it should be red")
+    $(".elevenam").css("background-color","red");
+}else if (hourNow > elevenAm){
+    console.log("now its passed eleven")
+    $(".elevenam").css("background-color","orange");
+
+}else{
+
+}
+
+var twelvePm = document.getElementById('twelve').value
+if (hourNow < twelvePm){
+    console.log("it's after 12")
+    $(".twelvepm").css("background-color","green");
+    //select class or id 
+    //then select css method
+    //set color to gray
+}
+else if (hourNow == twelvePm){
+    console.log("now it should be RED")
+    $(".twelvepm").css("background-color","red");
+}else if (hourNow > twelvePm){
+    console.log("now it's before 12")
+    $(".twelvepm").css("background-color","orange");
+
+}else{
+
+}
+
+// colour for one pm
+var onePm = document.getElementById('one').value
+if (hourNow < onePm){
+    console.log("it's after 12")
+    $(".onepm").css("background-color","green");
+    //select class or id 
+    //then select css method
+    //set color to gray
+}
+else if (hourNow == onePm){
+    console.log("now it should be RED")
+    $(".onepm").css("background-color","red");
+}else if (hourNow > onePm){
+    console.log("now it's before 12")
+    $(".onepm").css("background-color","orange");
+
+}else{
+
+}
+
+var twoPm = document.getElementById('two').value
+if (hourNow < onePm){
+    console.log("it's after 12")
+    $(".twopm").css("background-color","green");
+    //select class or id 
+    //then select css method
+    //set color to gray
+}
+else if (hourNow == twoPm){
+    console.log("now it should be RED")
+    $(".twopm").css("background-color","red");
+}else if (hourNow > twoPm){
+    console.log("now it's before 12")
+    $(".twopm").css("background-color","orange");
+
+}else{
+
+}
+
+var threePm = document.getElementById('three').value
+if (hourNow < threePm){
+    console.log("it's after 12")
+    $(".threepm").css("background-color","green");
+    //select class or id 
+    //then select css method
+    //set color to gray
+}
+else if (hourNow == threePm){
+    console.log("now it should be RED")
+    $(".threepm").css("background-color","red");
+}else if (hourNow > twoPm){
+    console.log("now it's before 12")
+    $(".threepm").css("background-color","orange");
+
+}else{
+
+}
+
+var fourPm = document.getElementById('four').value
+if (hourNow < fourPm){
+    console.log("it's after 12")
+    $(".fourpm").css("background-color","green");
+    //select class or id 
+    //then select css method
+    //set color to gray
+}
+else if (hourNow == fourPm){
+    console.log("now it should be RED")
+    $(".fourpm").css("background-color","red");
+}else if (hourNow > fourPm){
+    console.log("now it's before four")
+    $(".fourpm").css("background-color","orange");
+
+}else{
+
+}
+var fivePm = document.getElementById('five').value
+if (hourNow < fivePm){
+    console.log("it's after 12")
+    $(".fivepm").css("background-color","green");
+    //select class or id 
+    //then select css method
+    //set color to gray
+}
+else if (hourNow == fivePm){
+    console.log("now it should be RED")
+    $(".fivepm").css("background-color","red");
+}else if (hourNow > fivePm){
+    console.log("now it's before 12")
+    $(".fivepm").css("background-color","orange");
 
 }else{
 
 }
 
 
-/*
-let currentDateTime = new Date();
-    let formattedTime = currentDateTime.getHours() + ":" + currentDateTime.getMinutes() +":" + currentDateTime.getSeconds();
-    console.log(formattedTime)
+/* }) */
 
 
-    function getTwelveHours(){
-        if (i < 10) {
-            i = "0" + i;
-        }
-        return i;
-        }
-
-    function startTime() {
-        var today = new Date();
-        var h = today.getHours();
-        var m = today.getMinutes();
-        var s = today.getSeconds();
-        m = checkTime(m);
-        s = checkTime(s);
-        document.getElementById('textbox').innerHTML = h + ":" + m + ":" + s;
-        t = setTimeout(function () {
-            startTime()
-        }, 500);
-        }
-        startTime();
-
-        function checkTime(i) {
-            if (i<10) {i = "0" + i}; 
-            return i;
-         }
-
-         */
-
+let startHour = 1;
+let MidDay = 24;
+let hoursDay = Array(MidDay - startHour+1)
+.fill()
+.map(()=>startHour++);
+console.log(hoursDay);
