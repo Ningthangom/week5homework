@@ -1,18 +1,8 @@
-/* $(document).ready(function(){ */
-    $(".save").on('click',function (){
-      /*   console.log( $(".description").val()); */
-       console.log($(this).parent().prev().val())
-       console.log($(this).val())
-       //save id and message (id = time ) and inputtext == message to local 
-       // look into local storage method    
 
 
-    }) 
-    
 
 
-/* function() */
-/* { */
+alert("I was not able to displayback the data from the localstoreage. Apart from that everything should be ok")
   // instantiate a moment object
   var NowMoment = moment().format("DD:MM:YYYY hh:mm a");
   
@@ -37,13 +27,16 @@ if (hourNow < eightAm){
     //select class or id 
     //then select css method
     //set color to gray
+ 
 }
 else if (hourNow == eightAm){
     console.log("now it should be green")
     $(".eightam").css("background-color","red");
+   
 }else if (hourNow > eightAm){
     console.log("now it's before 12")
     $(".eightam").css("background-color","orange");
+
 
 }else{
 
@@ -55,13 +48,16 @@ if (hourNow < nineAm){
     console.log("it's after 12")
     $(".nineam").css("background-color","green");
 
+
 }
 else if (hourNow == nineAm){
     console.log("now it should be red")
     $(".nineam").css("background-color","red");
+
 }else if (hourNow > nineAm){
     console.log("now its passed nine")
     $(".nineam").css("background-color","orange");
+
 
 }else{
 
@@ -77,6 +73,7 @@ if (hourNow < tenAm){
 else if (hourNow == nineAm){
     console.log("now it should be red")
     $(".tenam").css("background-color","red");
+       
 }else if (hourNow > tenAm){
     console.log("now its passed nine")
     $(".tenam").css("background-color","orange");
@@ -142,7 +139,7 @@ else if (hourNow == onePm){
 }
 
 var twoPm = document.getElementById('two').value
-if (hourNow < onePm){
+if (hourNow < twoPm){
     console.log("it's after 12")
     $(".twopm").css("background-color","green");
     //select class or id 
@@ -201,9 +198,6 @@ var fivePm = document.getElementById('five').value
 if (hourNow < fivePm){
     console.log("it's after 12")
     $(".fivepm").css("background-color","green");
-    //select class or id 
-    //then select css method
-    //set color to gray
 }
 else if (hourNow == fivePm){
     console.log("now it should be RED")
@@ -216,8 +210,45 @@ else if (hourNow == fivePm){
 
 }
 
+var noteholder = document.querySelector(".decription");
 
-/* }) */
+
+$(".save").on('click',function (){
+      /*   console.log( $(".description").val()); */
+       console.log($(this).parent().prev().val())
+       console.log($(this).val())
+      
+
+
+        // THIS STORES THE USER INPUT INTO LOCAL STORAGE
+       localStorage.setItem($(this).val(),$(this).parent().prev().val()) 
+
+
+    //  assign each hour to notekey
+    var notekey = $(this).val()
+    //
+    window.localStorage.getItem(notekey);
+    //get the note with assign key
+    function getNotesLocal() {
+        // if the key is not empty get the note
+        if (localStorage.getItem(notekey) != null){
+            //assign the return from localstorage to note
+           let note =  localStorage.getItem(notekey);
+           //display the note into the textarea or the input space
+           noteholder.textContent = note;
+           
+        }
+    }
+    getNotesLocal();
+
+
+
+
+
+    }) 
+
+
+
 
 
 let startHour = 1;
@@ -226,3 +257,15 @@ let hoursDay = Array(MidDay - startHour+1)
 .fill()
 .map(()=>startHour++);
 console.log(hoursDay);
+    
+//try case
+
+/* var getlocalstorage = localStorage.getItem($(".description").val())
+
+if (getlocalstorage == null) {
+    window.localStorage.setItem(getlocalstorage,"");
+} else {
+    window.localStorage.setItem(getlocalstorage,$(this).parent().prev().val());
+} */
+ 
+
